@@ -33,7 +33,7 @@ const Checkout = () => {
     const [totaltime, settotaltime] = useState()
     const [setupTime, setSetUpTime] = useState()
     const [deliveryCharge, setdeliveryCharge] = useState()
-    const [payType,setayType]= useState()
+    const [payType,setPayType]= useState("cash")
     const [address, Setaddress] = useState(JSON.stringify(User[0]))
 
 
@@ -148,9 +148,9 @@ const Checkout = () => {
                                     <Select
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select"
-                                        value="cash"
+                                        value={payType}
                                         label="Payment Type"
-                                        onChange={(e) => setayType(e.target.value)}
+                                        onChange={(e) => setPayType(e.target.value)}
                                     >
                                         <MenuItem value='cash'>Cash</MenuItem>
                                         <MenuItem value='card'>Card</MenuItem>
