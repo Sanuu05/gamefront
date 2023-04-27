@@ -27,6 +27,7 @@ const Query = () => {
           <th>Item Amount</th>
           <th>Delivery Charges</th>
           <th>Total Amount</th>
+          <th>Pay Type</th>
         </tr>
         {
           data?.map((v, i) => {
@@ -42,6 +43,7 @@ const Query = () => {
               <td>₹ {v?.totalItemAmount}</td>
               <td>₹ {v?.deliveryCharges}</td>
               <td>₹ {v?.totalAmount}</td>
+              <td>{v?.payType}</td>
 
             </tr>
           })

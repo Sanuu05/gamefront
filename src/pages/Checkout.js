@@ -33,6 +33,7 @@ const Checkout = () => {
     const [totaltime, settotaltime] = useState()
     const [setupTime, setSetUpTime] = useState()
     const [deliveryCharge, setdeliveryCharge] = useState()
+    const [payType,setayType]= useState()
     const [address, Setaddress] = useState(JSON.stringify(User[0]))
 
 
@@ -75,7 +76,7 @@ const Checkout = () => {
             const diffValue = hexaTime.start?.diff(hexaTime.setup, 'Hours')
             if (diffValue > 0 && diffValue <= 24) {
 
-                const query = { item: userData?.cart, user: userData, eventStart: fromtime, eventEnd: totime, setUp: setupTime, totalItemAmount: totalAmount * (totaltime), totalHours: totaltime, delivery: JSON.parse(address), deliveryCharges: deliveryCharge, totalAmount: deliveryCharge + (totalAmount * (totaltime)) }
+                const query = { item: userData?.cart, user: userData, eventStart: fromtime, eventEnd: totime, setUp: setupTime, totalItemAmount: totalAmount * (totaltime), totalHours: totaltime, delivery: JSON.parse(address), deliveryCharges: deliveryCharge, totalAmount: deliveryCharge + (totalAmount * (totaltime)),payType:payType }
                 const { data } = await axios.post(`https://gameserver-39qc.onrender.com/user/query`, query, { headers: { "x-auth-token": token } })
                 alert('Query send sucesfully')
                 history('/')
@@ -137,6 +138,26 @@ const Checkout = () => {
                                             })
 
                                         }
+
+                                    </Select>
+                                </FormControl>
+                            </Box>
+                            <Box sx={{ margin: '10px 0' }}>
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">Payment Type</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        value="cash"
+                                        label="Payment Type"
+                                        onChange={(e) => setayType(e.target.value)}
+                                    >
+                                        <MenuItem value='cash'>Cash</MenuItem>
+                                        <MenuItem value='card'>Card</MenuItem>
+                                        <MenuItem value='upi'>Upi</MenuItem>
+                                        <MenuItem value='cheque'>cheque</MenuItem>
+
+                                       
 
                                     </Select>
                                 </FormControl>
