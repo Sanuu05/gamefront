@@ -76,10 +76,10 @@ const Checkout = () => {
             const diffValue = hexaTime.start?.diff(hexaTime.setup, 'Hours')
             if (diffValue > 0 && diffValue <= 24) {
 
-                // const query = { item: userData?.cart, user: userData, eventStart: fromtime, eventEnd: totime, setUp: setupTime, totalItemAmount: totalAmount * (totaltime), totalHours: totaltime, delivery: JSON.parse(address), deliveryCharges: deliveryCharge, totalAmount: deliveryCharge + (totalAmount * (totaltime)),payType:payType }
-                // const { data } = await axios.post(`https://gameserver-39qc.onrender.com/user/query`, query, { headers: { "x-auth-token": token } })
+                const query = { item: userData?.cart, user: userData, eventStart: fromtime, eventEnd: totime, setUp: setupTime, totalItemAmount: totalAmount * (totaltime), totalHours: totaltime, delivery: JSON.parse(address), deliveryCharges: deliveryCharge, totalAmount: deliveryCharge + (totalAmount * (totaltime)),payType:payType }
+                const { data } = await axios.post(`https://gameserver-39qc.onrender.com/user/query`, query, { headers: { "x-auth-token": token } })
                 alert('Query send sucesfully')
-                // history('/')
+                history('/')
             }
             toast.error('setup time should be within 24hrs hours before event start time')
 

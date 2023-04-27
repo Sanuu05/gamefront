@@ -20,6 +20,7 @@ const Query = () => {
           <th>Name</th>
           <th>Email</th>
           <th>Address</th>
+          <th>Games</th>
           <th>Event Start</th>
           <th>Event End</th>
           <th>SetUp Time</th>
@@ -36,6 +37,13 @@ const Query = () => {
               <td>{v?.user?.name}</td>
               <td>{v?.user?.email}</td>
               <td>{v?.delivery?.name}, {v?.delivery?.Distance}KM</td>
+              <td>
+                <ol>
+                  {v?.items?.map((v,i)=>{
+                    return <li>{v?.name}</li>
+                  })}
+                </ol>
+              </td>
               <td>{v?.eventStart}</td>
               <td>{v?.eventEnd}</td>
               <td>{v?.setUp}</td>
