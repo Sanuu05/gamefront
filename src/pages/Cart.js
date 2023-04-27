@@ -53,7 +53,7 @@ const Cart = () => {
                                         <h4>{v?.name}</h4>
                                         <p>{v?.des}</p>
                                         <p>{v?.price}/hr</p>
-                                        <Button variant='contained' onClick={() => delfromCart(v?.id)} >Delete</Button>
+                                        <Button variant='contained' color='error' onClick={() => delfromCart(v?.id)} >Remove</Button>
                                     </div>
                                 </div>
                             })
