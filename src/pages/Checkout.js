@@ -152,10 +152,10 @@ const Checkout = () => {
                                 <SideCard left="Total Amount per Hour" right={`₹ ${totalAmount}`} />
                                 <SideCard left="Event Start Date And Time" right={fromtime} />
                                 <SideCard left="Event End Date And Time" right={totime} />
-                                <SideCard left="Event Duration (Hours)" right={`${totaltime} Hr`} />
+                                <SideCard left="Event Duration (Hours)" right={`${totaltime?totaltime:'-'} Hr`} />
                                 <SideCard left="Setup date and time" right={setupTime} />
                                 <SideCard left="Total Distance" right={`${JSON.parse(address)?.Distance} km`} />
-                                <SideCard left="Total Price" right={`₹ ${totalAmount * (totaltime)}`} />
+                                <SideCard left="Total Price" right={`₹ ${(totalAmount * (totaltime))?(totalAmount * (totaltime)):'-'}`} />
                                 <SideCard left="Delivery Charges" right={`₹ ${deliveryCharge}`} />
                                 <div style={{ width: '100%', border: '1px solid grey' }} />
                                 <SideCard left="Total" right={`₹ ${deliveryCharge + (totalAmount * (totaltime))}`} />
