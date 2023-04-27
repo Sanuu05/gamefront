@@ -11,7 +11,7 @@ const Home = () => {
       const { data } = await axios.patch('https://gameserver-39qc.onrender.com/user/addtocart', cart, { headers: { "x-auth-token": token } })
       toast.success("Item added to the cart")
     } else {
-      toast.error('Some error happens')
+      toast.error('Ligin first')
     }
 
 
