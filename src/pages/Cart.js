@@ -69,7 +69,7 @@ const Cart = () => {
 
                             </CardContent>
                             <CardActions>
-                                <NavLink style={{textDecoration:'none',fontSize:'20px',color:'black',fontWeight:'bold'}} to='/checkout'>Process to Checkout</NavLink>
+                                <NavLink style={{textDecoration:'none',fontSize:'20px',color:'orange',fontWeight:'bold',padding:'5px',border:'1px solid orange'}} to='/checkout'>Process to Checkout</NavLink>
                             </CardActions>
                         </Card>
                     </Grid>
