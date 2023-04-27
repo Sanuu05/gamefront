@@ -22,6 +22,7 @@ export const userSign = (signdata) => async (dispatch) => {
         dispatch({ type: REGISTER_SUCCESS, payload: data })
         
     } catch (error) {
+        alert(error?.response?.msg)
 
         dispatch({ type: REGISTER_FAIL })
         dispatch({ type: GET_ERROR, payload: error.response })
@@ -32,6 +33,7 @@ export const loguser = (dat) => async (dispatch) => {
         const { data } = await Axios.post(`${port}/user/login`, dat)
         dispatch({ type: LOGIN_SUCCESS, payload: data })
     } catch (error) {
+        alert(error?.response?.msg)
 
         dispatch({ type: LOGIN_FAIL })
         dispatch({ type: GET_ERROR, payload: error.response })
