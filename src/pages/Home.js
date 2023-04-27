@@ -8,7 +8,7 @@ const Home = () => {
   const token = useSelector((state) => state?.user?.token)
   const addToCart = async (cart) => {
     if (token) {
-      const { data } = await axios.patch('http://localhost:8080/user/addtocart', cart, { headers: { "x-auth-token": token } })
+      const { data } = await axios.patch('https://gameserver-39qc.onrender.com/user/addtocart', cart, { headers: { "x-auth-token": token } })
       toast.success("Item added to the cart")
     } else {
       toast.error('Some error happens')

@@ -76,7 +76,7 @@ const Checkout = () => {
             if (diffValue > 0 && diffValue <= 24) {
 
                 const query = { item: userData?.cart, user: userData, eventStart: fromtime, eventEnd: totime, setUp: setupTime, totalItemAmount: totalAmount * (totaltime), totalHours: totaltime, delivery: JSON.parse(address), deliveryCharges: deliveryCharge, totalAmount: deliveryCharge + (totalAmount * (totaltime)) }
-                const { data } = await axios.post(`http://localhost:8080/user/query`, query, { headers: { "x-auth-token": token } })
+                const { data } = await axios.post(`https://gameserver-39qc.onrender.com/user/query`, query, { headers: { "x-auth-token": token } })
                 alert('Query send sucesfully')
                 history('/')
             }

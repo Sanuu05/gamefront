@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import { USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, REGISTER_SUCCESS, REGISTER_FAIL,  GET_ERROR} from './types'
 
-const port = "http://localhost:8080"
+const port = "https://gameserver-39qc.onrender.com"
 
 export const loadUser = () => async (dispatch, getState) => {
     try {

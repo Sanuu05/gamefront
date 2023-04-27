@@ -3,7 +3,7 @@ import axios from 'axios'
 const Query = () => {
   const [data, setdata] = useState()
   const quesyPost = async () => {
-    const { data } = await axios.get(`http://localhost:8080/user/query`)
+    const { data } = await axios.get(`https://gameserver-39qc.onrender.com/user/query`)
     setdata(data)
 
   }

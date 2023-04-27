@@ -29,7 +29,7 @@ const Cart = () => {
     const token = useSelector((state) => state?.user?.token)
     const delfromCart = async (id) => {
         if (token) {
-            const { data } = await axios.patch(`http://localhost:8080/user/delCartItem`, { id: id }, { headers: { "x-auth-token": token } })
+            const { data } = await axios.patch(`https://gameserver-39qc.onrender.com/user/delCartItem`, { id: id }, { headers: { "x-auth-token": token } })
             setdeleted(data)
             toast.success('Item removed')
 
